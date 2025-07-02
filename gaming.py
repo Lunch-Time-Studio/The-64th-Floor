@@ -1,40 +1,38 @@
-import pygame, sys
+import pygame, sys, os
 from pygame.locals import *
 pygame.init()
 
-displayw = 1600
-displayh = 1000
-window = pygame.display.set_mode((displayw,displayh))
-
-FPS = pygame.time.Clock()
-
 pygame.display.set_caption("The 64th Floor")
 
-background = pygame.image.load("/home/sh1224/The-64th-Floor/Images/Backgrounds/Temp_background2.xcf")
-button1 = pygame.image.load("/home/sh1224/The-64th-Floor/Images/box.xcf")
-
-# THIS WILL BE REPLACED BY ACTUAL TITLE ILUSTRATION: THIS IS TEMPORARY
-pygame.font.init()
-font1 = pygame.font.Font(None,100)
-Title = font1.render("The 64th Floor",True,(0,0,0))
-# THIS WILL BE REPLACED BY ACTUAL TITLE ILUSTRATION: THIS IS TEMPORARY 
-
-class starter:
-  def __init__ (self,displayw,displayh,background):
-    self.dw = displayw
-    self.dh = displayh
-    self.background = background
+class MAINRUN():
+  def __init__ (self):
+    self.dw = 1920
+    self.dh = 1080
+    self.dir = os.getcwd()
+    self.background = pygame.image.load(os.path.join(self.dir,"Images/Backgrounds/sector1-room.png"))
+    self.window = pygame.display.set_mode((self.dw,self.dh))
+    self.FPS = pygame.time.Clock()
     self.main()
 
+  def background (self):
+    scalex = self.window.get_width() / 128
+    scaley = self.window.get_height() / 128
+    background = pygame.transform.scale(self.background, (128 * scalex, 128 * scaley))
+    #background = pygame.transform.scale(background,(1000,1000))
+    self.window.blit(background,(0,0))
+
+  def image_load(self,directory,image_code):
+    image = pygame.image.load("")    
+
   def main (self):
-    FPS.tick(60)
+    self.FPS.tick(60)
     running = True
     
     while running:
 #background ======================================
 
       backgroundc = self.dw/2, self.dh/2
-      window.blit(background,(0,0))
+      MAINRUN.background(self)
       
 #background ======================================
       
@@ -47,20 +45,19 @@ class starter:
           
 #object ==========================================
 
+      """
       buttonw = button1.get_rect()[2]/2
       buttonh = button1.get_rect()[3]/2
       buttonfirst = self.dw/2-buttonw,self.dh/4-buttonh
       buttonc = self.dw/2-buttonw,self.dh/2-buttonh
       buttonthird = self.dw/2-buttonw,(3*self.dh)/4-buttonh
+      """
 
 #object ==========================================
 
-      window.blit(Title,buttonfirst)
-      window.blit(button1,buttonc)
-      window.blit(button1,buttonthird)
       pygame.display.update()
 
 
 print(__name__)
 if __name__ == '__main__':
-    starter(displayw,displayh,background)
+    MAINRUN()
