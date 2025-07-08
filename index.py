@@ -1,5 +1,5 @@
 import pygame, sys, os
-import logic, character_select
+import logic,scene_change
 from pygame.locals import *
 pygame.init()
 
@@ -34,7 +34,7 @@ class starter:
           x, y = event.pos
           if startbox.collidepoint(x, y):
             print('loading character selection page...')
-            character_select.main(self)
+            scene_change.fade_in(self,'character_select')
           #if endbox.collidepoint(x,y):
             
 #input ===========================================

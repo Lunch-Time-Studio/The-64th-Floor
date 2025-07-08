@@ -1,7 +1,6 @@
 import pygame, sys, os
-import logic
+import logic, scene_change
 from pygame.locals import *
-pygame.init()
 
 def main (self):
     self.FPS.tick(60)
