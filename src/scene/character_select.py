@@ -1,5 +1,7 @@
 import pygame, sys, os
-import logic, scene_change
+from src.utils import *
+from src.core import SceneManager
+#from . import scene_change
 from pygame.locals import *
 
 def main (self):
@@ -20,11 +22,12 @@ def main (self):
             
     #input ===========================================
 
-      logic.graphics.background(self)
+      SceneManager.allscene.BackgroundLoad(self)
+      SceneManager.allscene.BackgroundDraw(self)
           
     #object ==========================================
 
-      button1 = logic.graphics.resize(logic.graphics.image_load(self,"Images","box.xcf"),(300,150))
+      button1 = ImageUtils.ImageScale(resource.load_image("box.xcf"),(300,150))
       buttonw = button1.get_rect()[2]
       buttonh = button1.get_rect()[3]
       button = buttonw,buttonh
