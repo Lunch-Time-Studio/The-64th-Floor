@@ -1,6 +1,6 @@
-class ResourceCache:
+class LoaderCache:
     def __init__ (self):
-        self.iamges = {}
+        self.images = {}
         self.sounds = {}
         self.fonts = {}
 
@@ -9,3 +9,5 @@ class ResourceCache:
     
     def CacheSet (self,kind,key,value):
         getattr(self,kind)[key] = value
+
+

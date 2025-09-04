@@ -1,0 +1,45 @@
+my_pygame_project/
+├── assets/
+│   ├── images/
+│   │   ├── characters/
+│   │   ├── enemies/
+│   │   ├── backgrounds/
+│   │   └── ui/
+│   ├── sounds/
+│   │   ├── music/
+│   │   └── effects/
+│   └── fonts/
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config/
+│   │   └── settings.py
+│   ├── entities/
+│   │   ├── __init__.py,
+│   │   ├── player.py
+│   │   ├── enemy.py
+│   │   └── projectile.py
+│   ├── game/
+│   │   ├── __init__.py
+│   │   ├── game_loop.py
+│   │   ├── state_manager.py
+│   │   └── collision.py
+│   ├── ui/
+│   │   ├── __init__.py
+│   │   ├── hud.py
+│   │   └── menus.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── helpers.py
+│   │   └── loaders.py
+│   └── audio/
+│       ├── __init__.py
+│       ├── music_manager.py
+│       └── sound_manager.py
+├── tests/
+│   ├── test_player.py
+│   ├── test_enemy.py
+│   └── test_game_loop.py
+├── requirements.txt
+├── README.md
+└── run.py
