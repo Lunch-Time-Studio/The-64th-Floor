@@ -1,6 +1,6 @@
 import os, pygame
-from .cache import LoaderCache
-from config import paths
+from .cache.cache import LoaderCache
+from src.config import paths
 
 class Loaders:
 # === image ===

@@ -1,3 +1,4 @@
 __all___ = ["resource","background","cache","calc","ImageUtils"]
 
-from . import ImageUtils, resource, background, cache, calc
+from .cache import cache
+from . import ImageUtils, resource, background, calc
