@@ -1,4 +1,4 @@
-import os, sys
+"""import os, sys
 
 if hasattr(sys,'_MEIPASS'):
     base_dir = sys._MEIPASS
@@ -20,3 +20,13 @@ utils_dir = os.path.join(src_dir,'utils')
 entities_dir = os.path.join(src_dir,'entities')
 ui_dir = os.path.join(src_dir,'ui')
 audio_dir = os.path.join(src_dir,'audio')
+
+"""
+
+from pathlib import Path
+import sys
+
+if hasattr(sys,'_MEIPASS'):
+    base_dir = sys._MEIPASS
+else:
+    BASE_DIR = Path(__file__).resolve().parent
